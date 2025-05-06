@@ -19,21 +19,41 @@
             padding: 20px;
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
             max-width: 600px;
-            text-align: center;
+            width: 90%;
+            text-align: left; /* Align text to the left */
         }
-        h2 {
-            color: #333;
+        .bouncy-text {
+            text-align: center; /* Keeps the bouncing header centered */
         }
-        p {
-            font-size: 16px;
-            color: #555;
+        .bouncy-text span {
+            display: inline-block;
+            animation: bounce 0.6s infinite alternate ease-in-out;
         }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .bouncy-text span:nth-child(1) { animation-delay: 0s; }
+        .bouncy-text span:nth-child(2) { animation-delay: 0.1s; }
+        .bouncy-text span:nth-child(3) { animation-delay: 0.2s; }
+        .bouncy-text span:nth-child(4) { animation-delay: 0.3s; }
+        .bouncy-text span:nth-child(5) { animation-delay: 0.4s; }
+        .bouncy-text span:nth-child(6) { animation-delay: 0.5s; }
+        .bouncy-text span:nth-child(7) { animation-delay: 0.6s; }
+        .bouncy-text span:nth-child(8) { animation-delay: 0.7s; }
+        .bouncy-text span:nth-child(9) { animation-delay: 0.8s; }
+        .bouncy-text span:nth-child(10) { animation-delay: 0.9s; }
+        .bouncy-text span:nth-child(11) { animation-delay: 1s; }
+        .bouncy-text span:nth-child(12) { animation-delay: 1.1s; }
     </style>
 </head>
 <body>
     <div class="styled-box">
-        <h2>Introduction</h2>
+        <h2 class="bouncy-text">
+            <span>I</span><span>n</span><span>t</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>i</span><span>o</span><span>n</span>
+        </h2>
         <p>Hey, I'm Ewan, your Glasgow Representative for this year's ECN Committee. This is my second year in the role, and one of my key goals from last year was to engage more with our Apprentices based in Forth Valley, as a former college student. I’m committed to ensuring that everyone feels welcome and that the opportunities we offer our members are widely accessible.</p>
     </div>
 </body>
 </html>
+

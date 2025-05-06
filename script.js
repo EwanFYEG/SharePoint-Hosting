@@ -1,21 +1,21 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
-}
-.styled-box {
-    background-color: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    width: 90%;
-    text-align: left; /* Aligns all text inside the box to the left */
-}
-h2.bouncy-text {
-    display: inline-block;
-    text-align: left; /* Ensures title aligns left */
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const introText = document.querySelector(".bouncy-text");
+    introText.innerHTML = introText.textContent
+        .split("")
+        .map((letter, index) => `<span style="animation-delay: ${index * 0.1}s">${letter}</span>`)
+        .join("");
+});
+
+// Define the bouncing animation with CSS dynamically
+const style = document.createElement("style");
+style.innerHTML = `
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+    .bouncy-text span {
+        display: inline-block;
+        animation: bounce 0.6s infinite alternate ease-in-out;
+    }
+`;
+document.head.appendChild(style);
